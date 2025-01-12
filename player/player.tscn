@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://cvab88uw4a8gj"]
+[gd_scene load_steps=20 format=3 uid="uid://cvab88uw4a8gj"]
 
 [ext_resource type="Texture2D" uid="uid://ds21ivdauxtux" path="res://assets/Packs/warped-Caves/PNG/spritesheets/player/player-idle.png" id="1_mopu7"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_uqfu4"]
 [ext_resource type="Texture2D" uid="uid://cqan2kvc37b70" path="res://assets/Packs/warped-Caves/PNG/spritesheets/player/player-run.png" id="2_h6mff"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8y3h4"]
@@ -120,6 +121,7 @@ height = 40.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
+script = ExtResource("1_uqfu4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -24)
