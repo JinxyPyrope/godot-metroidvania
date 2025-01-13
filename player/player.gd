@@ -42,7 +42,7 @@ func _physics_process(delta : float):
 	
 	
 	
-	print("State ", State.keys()[current_state])
+	#print("State ", State.keys()[current_state])
 	
 func player_falling(delta : float):
 	if !is_on_floor():

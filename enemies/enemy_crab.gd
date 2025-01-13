@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-@onready var patrol_points=$PatrolPoints
+@export var patrol_points : Node
 @export var speed : int = 1500
 @export var wait_time : int = 3
 @export var health_amount : int = 3
@@ -90,3 +90,7 @@ func enemy_animations():
 
 func _on_timer_timeout():
 	can_walk = true
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	print("Enemy Hurtbox area entered")
