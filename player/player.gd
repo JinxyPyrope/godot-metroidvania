@@ -34,12 +34,12 @@ func player_falling(delta : float):
 	if !is_on_floor():
 		velocity.y += GRAVITY * delta
 
-func player_idle(delta):
+func player_idle(_delta):
 	if is_on_floor():
 		current_state = State.Idle
 		
 
-func player_run(delta : float):
+func player_run(_delta : float):
 	if !is_on_floor():
 		return
 		
