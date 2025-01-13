@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdk3mwjw8sw0j"]
+
+[ext_resource type="Texture2D" uid="uid://ss5nbyuuy355" path="res://assets/Packs/warped-Caves/PNG/spritesheets/Fx/impact.png" id="1_w0fuv"]
+[ext_resource type="Script" path="res://player/bullet_impact_effect.gd" id="2_dfdch"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opnyp"]
+atlas = ExtResource("1_w0fuv")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_05ck0"]
+atlas = ExtResource("1_w0fuv")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kotr1"]
+atlas = ExtResource("1_w0fuv")
+region = Rect2(24, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qtikm"]
+atlas = ExtResource("1_w0fuv")
+region = Rect2(36, 0, 12, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j2vf7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opnyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_05ck0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kotr1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qtikm")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"impact",
+"speed": 12.0
+}]
+
+[node name="BulletImpactEffect" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_j2vf7")
+animation = &"impact"
+autoplay = "impact"
+frame = 4
+frame_progress = 1.0
+script = ExtResource("2_dfdch")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

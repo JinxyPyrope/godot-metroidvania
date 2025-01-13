@@ -31,7 +31,7 @@ radius = 3.0
 [node name="Bullet" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_dr6lu")
 animation = &"shot"
-frame_progress = 0.637048
+frame_progress = 0.160577
 script = ExtResource("2_lwlap")
 
 [node name="Timer" type="Timer" parent="."]
