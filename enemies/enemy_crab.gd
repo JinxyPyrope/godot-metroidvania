@@ -22,6 +22,7 @@ var current_point_position : int
 var can_walk : bool
 
 
+
 func _ready():
 	if patrol_points != null:
 		number_of_points = patrol_points.get_children().size()
@@ -94,3 +95,7 @@ func _on_timer_timeout():
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	print("Enemy Hurtbox area entered")
+	if area.get_parent().has_method("get_damage_amount"):
+		var node = area.get_parent() as Node
+		health_amount -= node.damage_amount
+		print("Health amount: ", health_amount)
