@@ -18,3 +18,16 @@ position = Vector2(-83, 13)
 
 [node name="Point2" type="Marker2D" parent="EnemyCrab/PatrolPoints" index="1"]
 position = Vector2(100, 15)
+
+[node name="EnemyCrab" parent="EnemyCrab" index="4" instance=ExtResource("2_dl3am")]
+position = Vector2(248, 0)
+speed = 3000
+wait_time = 1
+
+[node name="PatrolPoints" type="Node2D" parent="EnemyCrab/EnemyCrab" index="3"]
+
+[node name="Point1" type="Marker2D" parent="EnemyCrab/EnemyCrab/PatrolPoints" index="0"]
+position = Vector2(-83, 13)
+
+[node name="Point2" type="Marker2D" parent="EnemyCrab/EnemyCrab/PatrolPoints" index="1"]
+position = Vector2(100, 15)
