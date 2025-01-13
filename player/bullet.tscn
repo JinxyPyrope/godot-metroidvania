@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://be4oj8gcxi821"]
+
+[ext_resource type="Texture2D" uid="uid://cf44ur7pwmtgc" path="res://assets/Packs/warped-Caves/PNG/spritesheets/Fx/shot.png" id="1_mfosr"]
+[ext_resource type="Script" path="res://player/bullet.gd" id="2_lwlap"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ks6xm"]
+atlas = ExtResource("1_mfosr")
+region = Rect2(0, 0, 6, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m30pd"]
+atlas = ExtResource("1_mfosr")
+region = Rect2(6, 0, 6, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dr6lu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ks6xm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m30pd")
+}],
+"loop": true,
+"name": &"shot",
+"speed": 10.0
+}]
+
+[node name="Bullet" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_dr6lu")
+animation = &"shot"
+frame_progress = 0.593364
+script = ExtResource("2_lwlap")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

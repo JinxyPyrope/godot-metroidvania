@@ -1,5 +1,10 @@
 extends CharacterBody2D
+
+var bullet = preload("res://player/bullet.tscn")
+
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var muzzle : Marker2D = $Muzzle
 
 const GRAVITY = 1000
 const SPEED = 300
@@ -13,21 +18,25 @@ const SPEED = 300
 @export var max_jump_horizontal_speed: int = 300
 @export var jump_horizontal : int = 100
 
-enum State {Idle, Run, Jump }
+enum State {Idle, Run, Jump, Shoot }
 
 var current_state : State
+var muzzle_position
 
 var character_sprite : Sprite2D
 
 
 func _ready():
 	current_state = State.Idle
+	muzzle_position = muzzle.position 
 	
 func _physics_process(delta : float):
 	player_falling(delta)
 	player_idle(delta)
 	player_run(delta)
 	player_jump(delta)
+	player_muzzle_position()
+	player_shoot(delta)
 	move_and_slide()
 	player_animations()
 	
@@ -71,13 +80,33 @@ func player_jump(delta : float):
 		velocity.x += direction * jump_horizontal_speed * delta
 		velocity.x = clamp(velocity.x, -max_jump_horizontal_speed, max_jump_horizontal_speed)
 
+func player_shoot(delta : float):
+	var direction = input_movement()
+		
+	if direction != 0 and Input.is_action_just_pressed('shoot'):
+		var bullet_instance = bullet.instantiate()as Node2D
+		bullet_instance.direction = direction
+		bullet_instance.global_position = muzzle.global_position
+		get_parent().add_child(bullet_instance)
+		current_state = State.Shoot
+		
+func player_muzzle_position():
+	var direction = input_movement()
+	
+	if direction > 0:
+		muzzle.position.x = muzzle_position.x
+	elif direction < 0:
+		muzzle.position.x = -muzzle_position.x
+		
 func player_animations():
 	if current_state == State.Idle:
 		animated_sprite_2d.play('idle')
-	elif current_state == State.Run:
+	elif current_state == State.Run and animated_sprite_2d.animation != "run_shoot":
 		animated_sprite_2d.play('run')
 	elif current_state == State.Jump:
 		animated_sprite_2d.play('jump')
+	elif current_state == State.Shoot:
+		animated_sprite_2d.play('run_shoot')
 
 func input_movement():
 	var direction : float = Input.get_axis("move_left", "move_right")
