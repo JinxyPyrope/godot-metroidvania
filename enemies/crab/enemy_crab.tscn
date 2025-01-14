@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://0fvv5a4vpqtw"]
 
-[ext_resource type="Texture2D" uid="uid://uk0pgxpbs180" path="res://assets/Packs/warped-Caves/PNG/spritesheets/enemies/crab-idle.png" id="1_j46wo"]
+[ext_resource type="Texture2D" path="res://assets/Packs/warped-Caves/PNG/spritesheets/enemies/crab-idle.png" id="1_j46wo"]
 [ext_resource type="Script" path="res://enemies/crab/enemy_crab.gd" id="1_mv650"]
-[ext_resource type="Texture2D" uid="uid://b0770s8ju7ruj" path="res://assets/Packs/warped-Caves/PNG/spritesheets/enemies/crab-walk.png" id="2_v2jrj"]
+[ext_resource type="Texture2D" path="res://assets/Packs/warped-Caves/PNG/spritesheets/enemies/crab-walk.png" id="2_v2jrj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nr0fi"]
 atlas = ExtResource("1_j46wo")

@@ -1,10 +1,10 @@
 [gd_scene load_steps=38 format=3 uid="uid://cvab88uw4a8gj"]
 
-[ext_resource type="Texture2D" uid="uid://ds21ivdauxtux" path="res://assets/Packs/warped-Caves/PNG/spritesheets/player/player-idle.png" id="1_mopu7"]
+[ext_resource type="Texture2D" path="res://assets/Packs/warped-Caves/PNG/spritesheets/player/player-idle.png" id="1_mopu7"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_uqfu4"]
-[ext_resource type="Texture2D" uid="uid://cqan2kvc37b70" path="res://assets/Packs/warped-Caves/PNG/spritesheets/player/player-run.png" id="2_h6mff"]
-[ext_resource type="Texture2D" uid="uid://cy1g27a3f6d6y" path="res://assets/Packs/warped-Caves/PNG/spritesheets/player/player-jump.png" id="3_v6nr2"]
-[ext_resource type="Texture2D" uid="uid://bd07hqdb0pw8m" path="res://assets/Packs/warped-Caves/PNG/spritesheets/player/player-run-shoot.png" id="5_m1w7t"]
+[ext_resource type="Texture2D" path="res://assets/Packs/warped-Caves/PNG/spritesheets/player/player-run.png" id="2_h6mff"]
+[ext_resource type="Texture2D" path="res://assets/Packs/warped-Caves/PNG/spritesheets/player/player-jump.png" id="3_v6nr2"]
+[ext_resource type="Texture2D" path="res://assets/Packs/warped-Caves/PNG/spritesheets/player/player-run-shoot.png" id="5_m1w7t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8y3h4"]
 atlas = ExtResource("1_mopu7")
