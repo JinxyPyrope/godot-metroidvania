@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://djsfsbbv17ttr"]
+[gd_scene load_steps=5 format=3 uid="uid://djsfsbbv17ttr"]
 
 [ext_resource type="PackedScene" uid="uid://bnvq4j0ysrf86" path="res://levels/BaseLevel.tscn" id="1_km06a"]
 [ext_resource type="PackedScene" uid="uid://dcyrlao0qbr1n" path="res://background/parallax_background.tscn" id="2_e5euf"]
 [ext_resource type="PackedScene" uid="uid://0fvv5a4vpqtw" path="res://enemies/crab/enemy_crab.tscn" id="4_llxnt"]
+[ext_resource type="PackedScene" uid="uid://b07uydt8ikw4f" path="res://ui/game_screen.tscn" id="4_ovxqw"]
 
 [node name="TestLevel" instance=ExtResource("1_km06a")]
 
@@ -13,3 +14,5 @@ layer_0/tile_data = PackedInt32Array(-262117, 983040, 8, -196581, 983040, 8, -13
 
 [node name="EnemyCrab" parent="." index="3" instance=ExtResource("4_llxnt")]
 position = Vector2(166, -85)
+
+[node name="GameScreen" parent="." index="4" instance=ExtResource("4_ovxqw")]

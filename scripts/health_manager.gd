@@ -4,6 +4,8 @@ extends Node
 var max_health : int = 3
 var current_health : int
 
+signal on_health_changed
+
 func _ready():
 	current_health = max_health
 	
@@ -15,6 +17,8 @@ func decrease_health(health_amount : int):
 		current_health = 0
 		
 	print("decrease heatlh")
+	
+	on_health_changed.emit(current_health)
 
 func increase_health(health_amount : int):
 	current_health += health_amount
@@ -23,3 +27,4 @@ func increase_health(health_amount : int):
 		current_health = max_health
 		
 	print("increase heatlh")
+	on_health_changed.emit(current_health)
