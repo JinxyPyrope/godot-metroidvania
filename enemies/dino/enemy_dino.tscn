@@ -1,9 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://ci5qbsona48eo"]
+[gd_scene load_steps=21 format=3 uid="uid://ci5qbsona48eo"]
 
 [ext_resource type="Texture2D" uid="uid://dghfl7bq45cy1" path="res://enemies/dino/dino.png" id="1_em0s8"]
 [ext_resource type="Texture2D" uid="uid://c84wqgd5g06sl" path="res://enemies/dino/dino-idle.png" id="2_6myyu"]
 [ext_resource type="Script" path="res://enemies/dino/gravity.gd" id="3_wd8of"]
 [ext_resource type="Script" path="res://scripts/state_machine/node_finite_state_machine.gd" id="4_ihlum"]
+[ext_resource type="Script" path="res://enemies/dino/idle_state.gd" id="5_ai1pl"]
+[ext_resource type="Script" path="res://enemies/dino/attack_state.gd" id="6_aq6nr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gdy0j"]
 atlas = ExtResource("1_em0s8")
@@ -97,6 +99,9 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j1lxi"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_1semh"]
+radius = 20.0998
+
 [node name="EnemyDino" type="CharacterBody2D"]
 collision_layer = 4
 
@@ -119,3 +124,16 @@ animated_body_2d = NodePath("../AnimatedSprite2D")
 
 [node name="State Machine" type="Node" parent="."]
 script = ExtResource("4_ihlum")
+
+[node name="Idle" type="Node" parent="State Machine"]
+script = ExtResource("5_ai1pl")
+
+[node name="Attack" type="Node" parent="State Machine"]
+script = ExtResource("6_aq6nr")
+
+[node name="AttackArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea2D"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_1semh")
+debug_color = Color(0.665916, 0.508331, 0.157694, 0.42)
