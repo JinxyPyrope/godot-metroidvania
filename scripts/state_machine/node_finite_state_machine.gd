@@ -18,7 +18,7 @@ func _ready() -> void:
 		current_node_state = initial_node_state
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(delta: float):
 	if current_node_state:
 		current_node_state.on_process(delta)
 	
