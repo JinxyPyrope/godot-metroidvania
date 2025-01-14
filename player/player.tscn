@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cvab88uw4a8gj"]
+[gd_scene load_steps=39 format=3 uid="uid://cvab88uw4a8gj"]
 
 [ext_resource type="Texture2D" uid="uid://ds21ivdauxtux" path="res://assets/warped-Caves/PNG/spritesheets/player/player-idle.png" id="1_mopu7"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_uqfu4"]
@@ -243,6 +243,10 @@ animations = [{
 radius = 8.0
 height = 40.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x6yx0"]
+radius = 9.0
+height = 36.0
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_uqfu4")
@@ -260,3 +264,14 @@ shape = SubResource("CapsuleShape2D_bw5sw")
 
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(17, -26)
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+
+[node name="HurtBoxCollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-1, -20)
+shape = SubResource("CapsuleShape2D_x6yx0")
+debug_color = Color(0.92887, 0.174074, 0.508804, 0.42)
+
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
