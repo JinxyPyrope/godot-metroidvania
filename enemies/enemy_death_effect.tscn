@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bdrwr03njppem"]
 
-[ext_resource type="Texture2D" path="res://assets/Packs/warped-Caves/PNG/spritesheets/Fx/enemy-death.png" id="1_b3t7m"]
+[ext_resource type="Texture2D" uid="uid://cyxnvuo83fooy" path="res://assets/warped-Caves/PNG/spritesheets/Fx/enemy-death.png" id="1_b3t7m"]
 [ext_resource type="Script" path="res://enemies/enemy_death_effect.gd" id="2_r0ukn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wo71g"]
