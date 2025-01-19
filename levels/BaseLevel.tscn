@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bnvq4j0ysrf86"]
+[gd_scene load_steps=10 format=3 uid="uid://bnvq4j0ysrf86"]
 
-[ext_resource type="Texture2D" uid="uid://d2s0q7yxb63l1" path="res://assets/Packs/warped-Caves/PNG/environment/layers/tilesets.png" id="1_y1cg4"]
+[ext_resource type="Texture2D" uid="uid://d2s0q7yxb63l1" path="res://assets/warped-Caves/PNG/environment/layers/tilesets.png" id="1_y1cg4"]
 [ext_resource type="PackedScene" uid="uid://cvab88uw4a8gj" path="res://player/player.tscn" id="2_m6ceg"]
-[ext_resource type="Texture2D" uid="uid://b8suvahfmx24w" path="res://assets/Packs/warped-Caves/PNG/environment/layers/walls.png" id="2_qnr7y"]
-[ext_resource type="Texture2D" uid="uid://cu3vj2mvrnuhb" path="res://assets/Packs/warped-Caves/PNG/environment/layers/props.png" id="3_ptxul"]
+[ext_resource type="Texture2D" uid="uid://b8suvahfmx24w" path="res://assets/warped-Caves/PNG/environment/layers/walls.png" id="2_qnr7y"]
+[ext_resource type="Texture2D" uid="uid://cu3vj2mvrnuhb" path="res://assets/warped-Caves/PNG/environment/layers/props.png" id="3_ptxul"]
+[ext_resource type="Script" path="res://player/player_camera.gd" id="5_ey1ye"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvwqj"]
 texture = ExtResource("1_y1cg4")
@@ -274,4 +275,7 @@ layer_2/z_index = 1
 [node name="Player" parent="." instance=ExtResource("2_m6ceg")]
 position = Vector2(39, -90)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="PlayerCamera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(39, -90)
+script = ExtResource("5_ey1ye")
+player = NodePath("../Player")
