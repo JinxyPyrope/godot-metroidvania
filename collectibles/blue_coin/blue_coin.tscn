@@ -62,7 +62,7 @@ script = ExtResource("1_stvk4")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_r1kfk")
 autoplay = "default"
-frame_progress = 0.631708
+frame_progress = 0.978826
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 16

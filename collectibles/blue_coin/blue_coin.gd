@@ -18,6 +18,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		animated_sprite_2d.hide()
 		
 		label.text = "%s" % award_amount
+		CollectibleManager.give_pickup_award(award_amount)
 		
 		label.show
 		
