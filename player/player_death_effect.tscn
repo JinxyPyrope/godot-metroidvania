@@ -1,5 +1,98 @@
-[gd_scene format=3 uid="uid://v1xfa2riuo7d"]
+[gd_scene load_steps=14 format=3 uid="uid://v1xfa2riuo7d"]
+
+[ext_resource type="Texture2D" uid="uid://b6ru3gex360rr" path="res://assets/Magic Pack 9 files/spritesheets/spark.png" id="1_fcbcx"]
+[ext_resource type="Texture2D" uid="uid://byad557u2unmo" path="res://assets/Magic Pack 9 files/sprites/spark/spark1.png" id="2_3slp7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u04vg"]
+atlas = ExtResource("1_fcbcx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2h8g7"]
+atlas = ExtResource("1_fcbcx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6lmcp"]
+atlas = ExtResource("1_fcbcx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oejo3"]
+atlas = ExtResource("1_fcbcx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qprq"]
+atlas = ExtResource("1_fcbcx")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onbat"]
+atlas = ExtResource("1_fcbcx")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkgmv"]
+atlas = ExtResource("1_fcbcx")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2n5ih"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u04vg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2h8g7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6lmcp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oejo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qprq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onbat")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkgmv")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_m7t5h"]
+colors = PackedColorArray(0, 0.498039, 0.854902, 1, 0.12549, 0.839216, 0.780392, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k0q6h"]
+gradient = SubResource("Gradient_m7t5h")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_av82n"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 35.0
+direction = Vector3(0, -0.5, 0)
+initial_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.5
+color_ramp = SubResource("GradientTexture1D_k0q6h")
 
 [node name="PlayerDeathEffect" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -15)
+sprite_frames = SubResource("SpriteFrames_2n5ih")
+autoplay = "default"
+frame = 4
+frame_progress = 0.314247
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, -15)
+amount = 100
+process_material = SubResource("ParticleProcessMaterial_av82n")
+texture = ExtResource("2_3slp7")
+speed_scale = 1.5
+explosiveness = 0.5
