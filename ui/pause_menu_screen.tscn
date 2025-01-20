@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddtlqr5uyerge"]
+[gd_scene load_steps=5 format=3 uid="uid://b2p8f5wto2gai"]
 
-[ext_resource type="Texture2D" uid="uid://bc5i56e4u8lfl" path="res://ui/theme/environment-preview.png" id="1_ff712"]
-[ext_resource type="Theme" uid="uid://xhsqdd5km2rc" path="res://ui/theme/game_theme.tres" id="2_1jqkf"]
-[ext_resource type="Texture2D" uid="uid://c66lg6xl47qhv" path="res://ui/theme/player-run-4.png" id="3_yrfqu"]
-[ext_resource type="Texture2D" uid="uid://cgqectmm2x0t2" path="res://ui/theme/crab-walk-1.png" id="4_4fd43"]
+[ext_resource type="Texture2D" uid="uid://bc5i56e4u8lfl" path="res://ui/theme/environment-preview.png" id="1_o85xh"]
+[ext_resource type="Theme" uid="uid://xhsqdd5km2rc" path="res://ui/theme/game_theme.tres" id="2_7pyip"]
+[ext_resource type="Texture2D" uid="uid://c66lg6xl47qhv" path="res://ui/theme/player-run-4.png" id="3_l45w1"]
+[ext_resource type="Texture2D" uid="uid://cgqectmm2x0t2" path="res://ui/theme/crab-walk-1.png" id="4_b80ip"]
 
-[node name="MainMenuScreen" type="CanvasLayer"]
+[node name="PauseMenuScreen" type="CanvasLayer"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
@@ -17,7 +17,7 @@ offset_right = 288.0
 offset_bottom = 14.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ff712")
+texture = ExtResource("1_o85xh")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -25,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_1jqkf")
+theme = ExtResource("2_7pyip")
 
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -42,20 +42,18 @@ theme_override_constants/margin_bottom = 10
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="PlayButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ContinueButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Play
-"
+text = "Continue"
 
-[node name="ExitButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MainMenuButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Exit 
-"
+text = "Main Menu"
 
 [node name="Player-run-4" type="Sprite2D" parent="."]
 position = Vector2(231, 229)
-texture = ExtResource("3_yrfqu")
+texture = ExtResource("3_l45w1")
 
 [node name="Crab-walk-1" type="Sprite2D" parent="."]
 position = Vector2(346, 231)
-texture = ExtResource("4_4fd43")
+texture = ExtResource("4_b80ip")
