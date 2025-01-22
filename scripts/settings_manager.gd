@@ -22,7 +22,7 @@ func load_settings():
 	
 	if settings_data != null:
 		set_window_mode(settings_data.window_mode, settings_data.window_mode_index)
-
+		set_resolution(settings_data.resolution, settings_data.resolution_index)
 
 func set_window_mode(window_mode : int, window_mode_index : int):
 	match window_mode:
@@ -37,3 +37,9 @@ func set_window_mode(window_mode : int, window_mode_index : int):
 	
 	settings_data.window_mode = window_mode
 	settings_data.window_mode_index = window_mode_index
+
+
+func set_resolution(resolution: Vector2i, resolution_index : int):
+	get_tree().root.content_scale_size = resolution
+	settings_data.resolution = resolution
+	settings_data.resolution_index = resolution_index
