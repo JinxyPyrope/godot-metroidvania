@@ -43,3 +43,10 @@ func set_resolution(resolution: Vector2i, resolution_index : int):
 	get_tree().root.content_scale_size = resolution
 	settings_data.resolution = resolution
 	settings_data.resolution_index = resolution_index
+
+
+func get_settings() -> SettingsDataResource:
+	return settings_data
+
+func save_settings():
+	ResourceSaver.save(settings_data, save_settings_path + save_file_name)
