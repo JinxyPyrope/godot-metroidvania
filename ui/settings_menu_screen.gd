@@ -1,10 +1,10 @@
 extends CanvasLayer
 
-@onready var window_mode_o_ption_button: OptionButton = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/WindowModeOPtionButton
+@onready var window_mode_option_button: OptionButton = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/WindowModeOPtionButton
 @onready var resolution_option_button: OptionButton = $MarginContainer/PanelContainer/MarginContainer/VBoxContainer/ResolutionOptionButton
 
 
-var window_nodes : Dictionary = {"Fullscreen" : DisplayServer.WINDOW_MODE_FULLSCREEN,
+var window_modes : Dictionary = {"Fullscreen" : DisplayServer.WINDOW_MODE_FULLSCREEN,
 								"Window" : DisplayServer.WINDOW_MODE_WINDOWED,
 								"Window Maximized" : DisplayServer.WINDOW_MODE_MAXIMIZED}
 								
@@ -14,3 +14,9 @@ var resolutions : Dictionary = {"320x180" : Vector2i(320, 180),
 								"854x480" : Vector2i(640, 360),
 								"1280x720" : Vector2i(1280, 720)}
 									
+func _ready():
+	for window_mode in window_modes: 
+		window_mode_option_button.add_item(window_mode)
+	
+	for resolution in resolutions:
+		resolution_option_button.add_item(resolution)
