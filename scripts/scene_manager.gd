@@ -1,7 +1,7 @@
 extends Node
 
 var scenes : Dictionary = {"Level1" : "res://levels/level_1.tscn",
-							"Level2" : "res://levels/level_2.tscn"}
+						   "Level2" : "res://levels/level_2.tscn"}
 							
 
 func transition_to_scene(level : String):

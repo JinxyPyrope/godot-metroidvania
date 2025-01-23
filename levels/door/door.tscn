@@ -10,14 +10,17 @@ size = Vector2(8, 48)
 script = ExtResource("1_ixarj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 position = Vector2(24, -24)
 texture = ExtResource("1_xjiqq")
 
 [node name="ExitArea2D" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea2D"]
 position = Vector2(4, -24)
 shape = SubResource("RectangleShape2D_c6j7a")
-debug_color = Color(0.401838, 0.604628, 0.196873, 0.42)
+debug_color = Color(0.747512, 0.46088, 0.0414855, 0.42)
 
 [connection signal="body_entered" from="ExitArea2D" to="." method="_on_exit_area_2d_body_entered"]
