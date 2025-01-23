@@ -18,7 +18,7 @@ const SPEED = 300
 @export var jump_horizontal_speed: int = 1000
 @export var max_jump_horizontal_speed: int = 300
 @export var jump_horizontal : int = 100
-@export var jump_count : int = 1
+@export var jump_count : int = 2
 
 
 enum State {Idle, Run, Jump, Shoot }
