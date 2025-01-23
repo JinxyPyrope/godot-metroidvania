@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://djsfsbbv17ttr"]
+[gd_scene load_steps=7 format=3 uid="uid://djsfsbbv17ttr"]
 
 [ext_resource type="PackedScene" uid="uid://bnvq4j0ysrf86" path="res://levels/BaseLevel.tscn" id="1_km06a"]
 [ext_resource type="PackedScene" uid="uid://dcyrlao0qbr1n" path="res://background/parallax_background.tscn" id="2_e5euf"]
 [ext_resource type="PackedScene" uid="uid://ryuqvlwnadyr" path="res://collectibles/blue_coin/blue_coin.tscn" id="3_7y4ej"]
 [ext_resource type="PackedScene" uid="uid://yopmnc1j41qt" path="res://pickups/health_pickup/health_pickup.tscn" id="3_mme4j"]
-[ext_resource type="PackedScene" uid="uid://0fvv5a4vpqtw" path="res://enemies/crab/enemy_crab.tscn" id="4_llxnt"]
 [ext_resource type="PackedScene" uid="uid://b07uydt8ikw4f" path="res://ui/game_screen.tscn" id="4_ovxqw"]
 [ext_resource type="PackedScene" uid="uid://deetlej7jow51" path="res://levels/door/door.tscn" id="7_83b2m"]
 
@@ -25,12 +24,9 @@ position = Vector2(272, -84)
 [node name="HealthPickup" parent="Pickups" index="0" instance=ExtResource("3_mme4j")]
 position = Vector2(230, -82)
 
-[node name="EnemyCrab" parent="." index="5" instance=ExtResource("4_llxnt")]
-position = Vector2(166, -85)
+[node name="GameScreen2" parent="." index="5" instance=ExtResource("4_ovxqw")]
 
-[node name="GameScreen2" parent="." index="6" instance=ExtResource("4_ovxqw")]
-
-[node name="Door" parent="." index="9" instance=ExtResource("7_83b2m")]
+[node name="Door" parent="." index="8" instance=ExtResource("7_83b2m")]
 position = Vector2(548, -111)
 scale = Vector2(-1, -1)
 next_scene = "Level1"
