@@ -24,7 +24,10 @@ position = Vector2(272, -84)
 [node name="HealthPickup" parent="Pickups" index="0" instance=ExtResource("3_mme4j")]
 position = Vector2(230, -82)
 
+[node name="Player" parent="." index="4"]
+jump_count = 2
+
 [node name="EnemyCrab" parent="." index="5" instance=ExtResource("4_llxnt")]
 position = Vector2(166, -85)
 
-[node name="GameScreen" parent="." index="6" instance=ExtResource("4_ovxqw")]
+[node name="GameScreen2" parent="." index="6" instance=ExtResource("4_ovxqw")]
