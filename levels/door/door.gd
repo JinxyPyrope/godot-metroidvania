@@ -1,6 +1,8 @@
 extends Node2D
 
 @export var next_scene : String
+@export var key_id : String
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
@@ -17,6 +19,11 @@ func _on_exit_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_activate_door_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
+		var has_item : bool  = InventoryManager.has_inventory_item(key_id)
+		
+		if !has_item: 
+			return
+			
 		if !door_open:
 			animated_sprite_2d.play("open")
 			door_open = true

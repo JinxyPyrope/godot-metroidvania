@@ -9,6 +9,9 @@ func add_to_inventory(type : String, value : String):
 	
 	
 func has_inventory_item(value : String) -> bool:
+	if value == null:
+		return false
+	
 	var item = inventory.find_key(value)
 	
 	if item: 

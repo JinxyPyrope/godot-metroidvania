@@ -73,6 +73,7 @@ shoot={
 2d_physics/layer_4="Pickup"
 2d_physics/layer_5="Collectibles"
 2d_physics/layer_6="Doors"
+2d_physics/layer_7="Keys"
 
 [rendering]
 
