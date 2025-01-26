@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cvab88uw4a8gj"]
+[gd_scene load_steps=41 format=3 uid="uid://cvab88uw4a8gj"]
 
 [ext_resource type="Texture2D" uid="uid://ds21ivdauxtux" path="res://assets/warped-Caves/PNG/spritesheets/player/player-idle.png" id="1_mopu7"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_uqfu4"]
@@ -9,7 +9,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q3xhk"]
 shader = ExtResource("2_4kf8l")
-shader_parameter/enabled = false
+shader_parameter/enabled = true
 shader_parameter/hit_color = Color(0.745098, 0.019608, 0.133333, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8y3h4"]
@@ -253,43 +253,6 @@ height = 40.0
 radius = 9.0
 height = 36.0
 
-[sub_resource type="Animation" id="Animation_7gkwq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="Animation" id="Animation_7vwl3"]
-resource_name = "hit"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:material:shader_parameter/enabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_r2vq8"]
-_data = {
-"RESET": SubResource("Animation_7gkwq"),
-"hit": SubResource("Animation_7vwl3")
-}
-
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_uqfu4")
@@ -319,10 +282,5 @@ visible = false
 position = Vector2(-1, -20)
 shape = SubResource("CapsuleShape2D_x6yx0")
 debug_color = Color(0.92887, 0.174074, 0.508804, 0.42)
-
-[node name="HitAnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_r2vq8")
-}
 
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
