@@ -6,7 +6,7 @@ signal transition
 func on_process(delta : float):
 	pass
 	
-func onphysics_process(delta : float):
+func on_physics_process(delta : float):
 	pass
 	
 func enter():

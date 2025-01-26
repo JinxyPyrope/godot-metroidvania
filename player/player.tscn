@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://cvab88uw4a8gj"]
+[gd_scene load_steps=54 format=3 uid="uid://cvab88uw4a8gj"]
 
 [ext_resource type="Texture2D" uid="uid://ds21ivdauxtux" path="res://assets/warped-Caves/PNG/spritesheets/player/player-idle.png" id="1_mopu7"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_uqfu4"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://bioobrhqxpsdl" path="res://assets/warped-Caves/PNG/spritesheets/player/player-shoot-stand.png" id="8_rnrqs"]
 [ext_resource type="Texture2D" uid="uid://cwrxna3cnnade" path="res://assets/warped-Caves/PNG/spritesheets/player/player-shoot-up.png" id="9_r5nc5"]
 [ext_resource type="Texture2D" uid="uid://4cpdjjptw2al" path="res://assets/warped-Caves/PNG/spritesheets/player/player-shoot-wall-cling.png" id="10_y63s8"]
+[ext_resource type="Script" path="res://scripts/state_machine/node_finite_state_machine.gd" id="11_xjunw"]
+[ext_resource type="Script" path="res://player/player_states/idle_state.gd" id="12_1juon"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q3xhk"]
 shader = ExtResource("2_4kf8l")
@@ -357,5 +359,14 @@ collision_mask = 4
 position = Vector2(-1, -20)
 shape = SubResource("CapsuleShape2D_x6yx0")
 debug_color = Color(0.92887, 0.174074, 0.508804, 0.42)
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("11_xjunw")
+initial_node_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d")]
+script = ExtResource("12_1juon")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
