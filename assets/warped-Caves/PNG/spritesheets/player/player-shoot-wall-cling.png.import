@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd07hqdb0pw8m"
-path="res://.godot/imported/player-run-shoot.png-ddd49f1b02faa05025e75d601942e8f2.ctex"
+uid="uid://4cpdjjptw2al"
+path="res://.godot/imported/player-shoot-wall-cling.png-557f0e0ef26214ee3af77b1135788ea2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/warped-Caves/PNG/spritesheets/player/player-run-shoot.png"
-dest_files=["res://.godot/imported/player-run-shoot.png-ddd49f1b02faa05025e75d601942e8f2.ctex"]
+source_file="res://assets/warped-Caves/PNG/spritesheets/player/player-shoot-wall-cling.png"
+dest_files=["res://.godot/imported/player-shoot-wall-cling.png-557f0e0ef26214ee3af77b1135788ea2.ctex"]
 
 [params]
 

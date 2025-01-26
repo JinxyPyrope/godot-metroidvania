@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://b0gmootbcoekj" path="res://player/player_hit_flash_shader.tres" id="2_4kf8l"]
 [ext_resource type="Texture2D" uid="uid://cqan2kvc37b70" path="res://assets/warped-Caves/PNG/spritesheets/player/player-run.png" id="2_h6mff"]
 [ext_resource type="Texture2D" uid="uid://cy1g27a3f6d6y" path="res://assets/warped-Caves/PNG/spritesheets/player/player-jump.png" id="3_v6nr2"]
-[ext_resource type="Texture2D" uid="uid://bd07hqdb0pw8m" path="res://assets/warped-Caves/PNG/spritesheets/player/player-run-shoot.png" id="5_m1w7t"]
+[ext_resource type="Texture2D" uid="uid://bd07hqdb0pw8m" path="res://assets/warped-Caves/PNG/spritesheets/player/player-shoot-run.png" id="5_m1w7t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q3xhk"]
 shader = ExtResource("2_4kf8l")

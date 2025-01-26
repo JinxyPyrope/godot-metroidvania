@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4cpdjjptw2al"
-path="res://.godot/imported/player-cling.png-9021ab7d4f4a8d6d0a3f42eda9d81e67.ctex"
+uid="uid://bioobrhqxpsdl"
+path="res://.godot/imported/player-shoot-stand.png-66f6826d0d01ee716800b45fd7c30c77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/warped-Caves/PNG/spritesheets/player/player-cling.png"
-dest_files=["res://.godot/imported/player-cling.png-9021ab7d4f4a8d6d0a3f42eda9d81e67.ctex"]
+source_file="res://assets/warped-Caves/PNG/spritesheets/player/player-shoot-stand.png"
+dest_files=["res://.godot/imported/player-shoot-stand.png-66f6826d0d01ee716800b45fd7c30c77.ctex"]
 
 [params]
 

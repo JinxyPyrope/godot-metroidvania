@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bioobrhqxpsdl"
-path="res://.godot/imported/player-stand.png-5fd8eab3c5fee2214cb40f367f27f28b.ctex"
+uid="uid://d4lh6oa1nyw8b"
+path="res://.godot/imported/player-shoot-crouch.png-9203d8605bab943a2c23847236bdd325.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/warped-Caves/PNG/spritesheets/player/player-stand.png"
-dest_files=["res://.godot/imported/player-stand.png-5fd8eab3c5fee2214cb40f367f27f28b.ctex"]
+source_file="res://assets/warped-Caves/PNG/spritesheets/player/player-shoot-crouch.png"
+dest_files=["res://.godot/imported/player-shoot-crouch.png-9203d8605bab943a2c23847236bdd325.ctex"]
 
 [params]
 
