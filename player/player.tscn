@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cvab88uw4a8gj"]
+[gd_scene load_steps=52 format=3 uid="uid://cvab88uw4a8gj"]
 
 [ext_resource type="Texture2D" uid="uid://ds21ivdauxtux" path="res://assets/warped-Caves/PNG/spritesheets/player/player-idle.png" id="1_mopu7"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_uqfu4"]
@@ -6,11 +6,19 @@
 [ext_resource type="Texture2D" uid="uid://cqan2kvc37b70" path="res://assets/warped-Caves/PNG/spritesheets/player/player-run.png" id="2_h6mff"]
 [ext_resource type="Texture2D" uid="uid://cy1g27a3f6d6y" path="res://assets/warped-Caves/PNG/spritesheets/player/player-jump.png" id="3_v6nr2"]
 [ext_resource type="Texture2D" uid="uid://bd07hqdb0pw8m" path="res://assets/warped-Caves/PNG/spritesheets/player/player-shoot-run.png" id="5_m1w7t"]
+[ext_resource type="Texture2D" uid="uid://d4lh6oa1nyw8b" path="res://assets/warped-Caves/PNG/spritesheets/player/player-shoot-crouch.png" id="6_0koke"]
+[ext_resource type="Texture2D" uid="uid://bioobrhqxpsdl" path="res://assets/warped-Caves/PNG/spritesheets/player/player-shoot-stand.png" id="8_rnrqs"]
+[ext_resource type="Texture2D" uid="uid://cwrxna3cnnade" path="res://assets/warped-Caves/PNG/spritesheets/player/player-shoot-up.png" id="9_r5nc5"]
+[ext_resource type="Texture2D" uid="uid://4cpdjjptw2al" path="res://assets/warped-Caves/PNG/spritesheets/player/player-shoot-wall-cling.png" id="10_y63s8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q3xhk"]
 shader = ExtResource("2_4kf8l")
 shader_parameter/enabled = false
 shader_parameter/hit_color = Color(0.745098, 0.019608, 0.133333, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff3pv"]
+atlas = ExtResource("2_h6mff")
+region = Rect2(400, 0, 80, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8y3h4"]
 atlas = ExtResource("1_mopu7")
@@ -92,6 +100,10 @@ region = Rect2(640, 0, 80, 80)
 atlas = ExtResource("2_h6mff")
 region = Rect2(720, 0, 80, 80)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_03xno"]
+atlas = ExtResource("6_0koke")
+region = Rect2(0, 0, 80, 80)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_wiwah"]
 atlas = ExtResource("5_m1w7t")
 region = Rect2(0, 0, 80, 80)
@@ -132,8 +144,36 @@ region = Rect2(640, 0, 80, 80)
 atlas = ExtResource("5_m1w7t")
 region = Rect2(720, 0, 80, 80)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7myn"]
+atlas = ExtResource("8_rnrqs")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a73sv"]
+atlas = ExtResource("8_rnrqs")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbx1u"]
+atlas = ExtResource("8_rnrqs")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0ujv"]
+atlas = ExtResource("9_r5nc5")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djctl"]
+atlas = ExtResource("10_y63s8")
+region = Rect2(0, 0, 80, 80)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_8fu1p"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff3pv")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8y3h4")
@@ -211,6 +251,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_03xno")
+}],
+"loop": false,
+"name": &"shoot_crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wiwah")
 }, {
 "duration": 1.0,
@@ -241,8 +289,38 @@ animations = [{
 "texture": SubResource("AtlasTexture_6ar0o")
 }],
 "loop": true,
-"name": &"run_shoot",
+"name": &"shoot_run",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7myn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a73sv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbx1u")
+}],
+"loop": true,
+"name": &"shoot_stand",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0ujv")
+}],
+"loop": false,
+"name": &"shoot_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djctl")
+}],
+"loop": false,
+"name": &"shoot_wall_cling",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bw5sw"]
@@ -261,11 +339,10 @@ script = ExtResource("1_uqfu4")
 material = SubResource("ShaderMaterial_q3xhk")
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_8fu1p")
-animation = &"jump"
+animation = &"shoot_wall_cling"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(-1, -20)
 shape = SubResource("CapsuleShape2D_bw5sw")
 
@@ -277,7 +354,6 @@ collision_layer = 2
 collision_mask = 4
 
 [node name="HurtBoxCollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-visible = false
 position = Vector2(-1, -20)
 shape = SubResource("CapsuleShape2D_x6yx0")
 debug_color = Color(0.92887, 0.174074, 0.508804, 0.42)
