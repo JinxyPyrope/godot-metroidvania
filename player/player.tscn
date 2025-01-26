@@ -9,7 +9,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q3xhk"]
 shader = ExtResource("2_4kf8l")
-shader_parameter/enabled = true
+shader_parameter/enabled = false
 shader_parameter/hit_color = Color(0.745098, 0.019608, 0.133333, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8y3h4"]
@@ -261,9 +261,8 @@ script = ExtResource("1_uqfu4")
 material = SubResource("ShaderMaterial_q3xhk")
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_8fu1p")
-animation = &"run_shoot"
+animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.190808
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
