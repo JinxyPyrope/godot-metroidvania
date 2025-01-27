@@ -17,6 +17,7 @@ func on_physics_process(delta : float):
 	#idle State transition
 	if character_body_2d.is_on_floor():
 		transition.emit("Idle")
+		
 func enter():
 	animated_sprite_2d.play("fall")
 	
