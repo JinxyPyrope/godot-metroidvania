@@ -28,6 +28,10 @@ func on_physics_process(delta : float):
 	#jump state
 	if GameInputEvents.jump_input():
 		transition.emit("Jump")
+		
+	#shoot stand state
+	if GameInputEvents.shoot_input():
+		transition.emit("ShootStand")
 	
 func enter():
 	animated_sprite_2d.play("idle")
