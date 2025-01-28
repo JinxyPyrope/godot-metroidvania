@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cvab88uw4a8gj"]
+[gd_scene load_steps=59 format=3 uid="uid://cvab88uw4a8gj"]
 
 [ext_resource type="Texture2D" uid="uid://ds21ivdauxtux" path="res://assets/warped-Caves/PNG/spritesheets/player/player-idle.png" id="1_mopu7"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_uqfu4"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://player/player_states/run_state.gd" id="14_wwu4e"]
 [ext_resource type="Script" path="res://player/player_states/jump_state.gd" id="15_1ppa6"]
 [ext_resource type="Script" path="res://player/player_states/shoot_stand_state.gd" id="16_8hxt4"]
+[ext_resource type="Script" path="res://player/player_states/shoot_up_state.gd" id="17_284u1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q3xhk"]
 shader = ExtResource("2_4kf8l")
@@ -345,7 +346,7 @@ script = ExtResource("1_uqfu4")
 material = SubResource("ShaderMaterial_q3xhk")
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_8fu1p")
-animation = &"shoot_stand"
+animation = &"shoot_up"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -391,6 +392,12 @@ max_jump_count = 2
 
 [node name="ShootStand" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
 script = ExtResource("16_8hxt4")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+muzzle = NodePath("../../Muzzle")
+
+[node name="ShootUp" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+script = ExtResource("17_284u1")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 muzzle = NodePath("../../Muzzle")
