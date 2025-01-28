@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cvab88uw4a8gj"]
+[gd_scene load_steps=61 format=3 uid="uid://cvab88uw4a8gj"]
 
 [ext_resource type="Texture2D" uid="uid://ds21ivdauxtux" path="res://assets/warped-Caves/PNG/spritesheets/player/player-idle.png" id="1_mopu7"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_uqfu4"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://player/player_states/shoot_stand_state.gd" id="16_8hxt4"]
 [ext_resource type="Script" path="res://player/player_states/shoot_up_state.gd" id="17_284u1"]
 [ext_resource type="Script" path="res://player/player_states/shoot_crouch_state.gd" id="18_dkw1c"]
+[ext_resource type="Script" path="res://player/player_states/shoot_run_state.gd" id="19_gc1bl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q3xhk"]
 shader = ExtResource("2_4kf8l")
@@ -405,6 +406,12 @@ muzzle = NodePath("../../Muzzle")
 
 [node name="ShootCrouch" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
 script = ExtResource("18_dkw1c")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+muzzle = NodePath("../../Muzzle")
+
+[node name="ShootRun" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+script = ExtResource("19_gc1bl")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 muzzle = NodePath("../../Muzzle")

@@ -32,7 +32,10 @@ func on_physics_process(delta : float):
 	#jump state
 	if GameInputEvents.jump_input():
 		transition.emit("Jump")
-		
+	
+	#shoot un state
+	if direction != 0 and GameInputEvents.shoot_input():
+		transition.emit("ShootRun")
 func enter():
 	animated_sprite_2d.play('run')
 	
