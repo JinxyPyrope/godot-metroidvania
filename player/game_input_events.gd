@@ -25,8 +25,8 @@ static func crouch_input() -> bool:
 
 static func fall_input() -> bool:
 	var fall_input : bool = Input.is_action_pressed("force_fall")
-	return fall_input()
+	return fall_input
 
 static func wall_cling_input() -> bool:
 	var wall_cling_input : bool = Input.is_action_pressed("wall_cling")
-	return wall_cling_input()
+	return wall_cling_input

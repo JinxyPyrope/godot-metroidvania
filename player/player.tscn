@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://cvab88uw4a8gj"]
+[gd_scene load_steps=62 format=3 uid="uid://cvab88uw4a8gj"]
 
 [ext_resource type="Texture2D" uid="uid://ds21ivdauxtux" path="res://assets/warped-Caves/PNG/spritesheets/player/player-idle.png" id="1_mopu7"]
 [ext_resource type="Script" path="res://player/player.gd" id="1_uqfu4"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" path="res://player/player_states/shoot_up_state.gd" id="17_284u1"]
 [ext_resource type="Script" path="res://player/player_states/shoot_crouch_state.gd" id="18_dkw1c"]
 [ext_resource type="Script" path="res://player/player_states/shoot_run_state.gd" id="19_gc1bl"]
+[ext_resource type="Script" path="res://player/player_states/shoot_wall_cling_state.gd" id="20_od7u5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q3xhk"]
 shader = ExtResource("2_4kf8l")
@@ -333,7 +334,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bw5sw"]
-radius = 8.0
+radius = 7.0
 height = 40.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x6yx0"]
@@ -348,7 +349,7 @@ script = ExtResource("1_uqfu4")
 material = SubResource("ShaderMaterial_q3xhk")
 position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_8fu1p")
-animation = &"shoot_crouch"
+animation = &"shoot_wall_cling"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -359,6 +360,7 @@ shape = SubResource("CapsuleShape2D_bw5sw")
 position = Vector2(17, -26)
 
 [node name="HurtBox" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 4
 
@@ -412,6 +414,12 @@ muzzle = NodePath("../../Muzzle")
 
 [node name="ShootRun" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
 script = ExtResource("19_gc1bl")
+character_body_2d = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+muzzle = NodePath("../../Muzzle")
+
+[node name="ShootWallCling" type="Node" parent="StateMachine" node_paths=PackedStringArray("character_body_2d", "animated_sprite_2d", "muzzle")]
+script = ExtResource("20_od7u5")
 character_body_2d = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 muzzle = NodePath("../../Muzzle")
